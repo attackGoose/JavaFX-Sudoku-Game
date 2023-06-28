@@ -12,19 +12,19 @@ public class Sudoku{
 
     }
 
-//when collapsing a cell/chooseing a number for it, you also have to remove that number from every other cell in its row, column, and 3x3 square, impliment the function below
-public boolean refreshEntropy(int[][]gameBoard) {
-    boolean finishedTask = false;
-    /* for () {
+    //when collapsing a cell/chooseing a number for it, you also have to remove that number from every other cell in its row, column, and 3x3 square, impliment the function below
+    public boolean refreshEntropy(int[][]gameBoard) {
+        boolean finishedTask = false;
+        /* for () {
 
-    } */
-    return finishedTask;
-}
+        } */
+        return finishedTask;
+    }
 
-//create a method that chooses the cell with the least entropy and collapses it (chooses an available number for the cell)
-public int collapseCell(int[] GameCell) {
-    return 0; //the int[] should contain the number of available options for the cell
+    //create a method that chooses the cell with the least entropy and collapses it (chooses an available number for the cell)
+    public int collapseCell(int[] GameCell) {
+        return 0; //the int[] should contain the number of available options for the cell
 
-}
+    }
 
 }

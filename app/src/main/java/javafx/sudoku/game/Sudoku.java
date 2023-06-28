@@ -21,10 +21,15 @@ public class Sudoku{
         return finishedTask;
     }
 
-    //create a method that chooses the cell with the least entropy and collapses it (chooses an available number for the cell)
+    //chooses the cell with the least entropy and collapses it (chooses an available number for the cell)
     public int collapseCell(int[] GameCell) {
         return 0; //the int[] should contain the number of available options for the cell
 
+    }
+
+    //displays the possible values for that cell
+    public void showPossibleValues() {
+        
     }
 
 }

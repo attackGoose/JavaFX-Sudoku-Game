@@ -27,6 +27,7 @@ public class App extends Application{
     StackPane testPane;
 
     //box slots/Grid: 
+    /* 
     int a1, a2, a3, a4, a5, a6, a7, a8, a9, a10;
     int b1, b2, b3, b4, b5, b6, b7, b8, b9, b10;
     int c1, c2, c3, c4, c5, c6, c7, c8, c9, c10;
@@ -35,9 +36,9 @@ public class App extends Application{
     int f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
     int g1, g2, g3, g4, g5, g6, g7, g8, g9, g10;
     int h1, h2, h3, h4, h5, h6, h7, h8, h9, h10;
-    int i1, i2, i3, i4, i5, i6, i7, i8, i9, i10;
+    int i1, i2, i3, i4, i5, i6, i7, i8, i9, i10;*/
 
-    int[][] GameBoard = { //each slot in the game window will have a value stored in it, that value will correspond with the values in this list
+    int[][] GameBoard = new int[10][10]; /*{ the starting value of each slot is 0, which wil need to be changed as the puzzle progresses
         {a1,b1,c1,d1,e1,f1,g1,h1,i1},
         {a2,b2,c2,d2,e2,f2,g2,h2,i2},
         {a3,b3,c3,d3,e3,f3,g3,h3,i3},
@@ -47,7 +48,8 @@ public class App extends Application{
         {a7,b7,c7,d7,e7,f7,g7,h7,i7},
         {a9,b9,c9,d9,e9,f9,g9,h9,i9},
         {a10,b10,c10,d10,e10,f10,g10,h10,i10}
-        };
+        };*/
+
 
     Sudoku gamepannel = new Sudoku(GameBoard);
 //https://edencoding.com/javafx-textfield/#:~:text=Validating%20user%20input%201%20TextFormatter%20class.%20If%20you,called%20a%20UnaryOperator.%203%20Testing%20for%20numbers.%20

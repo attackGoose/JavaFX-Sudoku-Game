@@ -13,9 +13,9 @@ public class Sudoku{
     }
 
     //when collapsing a cell/chooseing a number for it, you also have to remove that number from every other cell in its row, column, and 3x3 square, impliment the function below
-    public boolean refreshEntropy(int[][]gameBoard) {
-        boolean finishedTask = false;
-        /* for () {
+    public boolean refreshEntropy(int[][] gameBoard) {
+        boolean finishedTask = false; //for this, you have to check the numberseach colmn, row, and designated 3x3 cube that its in, and elimiate those numbers from the possible values
+        /*for () {
 
         } */
         return finishedTask;
@@ -23,8 +23,11 @@ public class Sudoku{
 
     //automatically chooses the cell with the least entropy and collapses it (chooses an available number for the cell)
     public int autoCollapseCell(int[] GameCell) {
-        return 0; //the int[] should contain the number of available options for the cell
 
+        Random cellValue = new Random();
+        int chosenValue = cellValue.nextInt(10);
+
+        return chosenValue; //the int[] should contain the number of available options for the cell
     }
 
     public int collapseCell(int[] GameCell) { //this is for when the user manually solves the puzzle

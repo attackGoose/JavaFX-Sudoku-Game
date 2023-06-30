@@ -45,7 +45,7 @@ public class Sudoku{
         
     }
 
-    // chooses the cell with the least entropy/options
+    // chooses the cell with the least entropy/options after looking over every option in the row, column, and its 3x3 square 
     public void selectCell(int[] gameBoard, int[] gameCell) {
         
     }   

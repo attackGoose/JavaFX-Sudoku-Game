@@ -36,9 +36,18 @@ public class Sudoku{
         return 0;
     }
 
+
     //displays the possible values for that cell
-    public void showPossibleValues() {
+    public void showPossibleValues(int[] gameCell) {
+        int[] availableValues = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        //loop over every value in its row, collumn, and 3x3 square and elimate those values from the list of available values
         
     }
+
+    // chooses the cell with the least entropy/options
+    public void selectCell(int[] gameBoard, int[] gameCell) {
+        
+    }   
 
 }

@@ -51,3 +51,6 @@ public class Sudoku{
     }   
 
 }
+
+//also you can place pictures of empty slots or numbered slots in the resources file then reference those from there, so the user can just play with only their mouse
+//you can reference the pictures via .\resources\pngName.png i believe

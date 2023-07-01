@@ -3,9 +3,10 @@
 package javafx.sudoku.game;
 
 import java.util.Random; //this will be used later to pick a random number to collapse the cell with
-import java.util.*;
 
 public class Sudoku{
+
+    //NOTE: the gameBoard parameter refers to the entire board, including dimensions in [rows][columns]
 
     boolean collapsed = false; //this assumes that no cells have a number in them yet
 
@@ -47,7 +48,7 @@ public class Sudoku{
     }
 
     // chooses the cell with the least entropy/options after looking over every option in the row, column, and its 3x3 square, more than one cell is found
-    public void selectCell(int[][] gameBoard, int[] gameCell) {
+    public void selectCell(int[][] gameBoard, int[] gameCell) { 
         int minLength = 0; //set this value to the length of the cell with the lowest entropy
         for (int rowIndex = 0; gameBoard.length > rowIndex + 1; rowIndex++) {
             for (int columnIndex = 0; gameBoard.length > columnIndex + 1; columnIndex++) {

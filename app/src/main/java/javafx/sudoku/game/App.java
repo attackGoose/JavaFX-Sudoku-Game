@@ -26,7 +26,13 @@ public class App extends Application{
     TextField b21;
     StackPane testPane;
 
-    //box slots/Grid: 
+    
+    /* HOW CELLS WORK (cells are the individual squares that make up the sudoku puzzle)
+    if a cell number is a multiple of 11, it means that the cell contains no current values, and the that is repeated would be the amount of possible values
+    so for example, 33 means that the current cell is unoccupied and it has 3 possible values, and 99 would mean that the cell is unoccupied and has 9 possible values
+    */
+
+    //box slots/Cells/Grid: 
     TextField a1, a2, a3, a4, a5, a6, a7, a8, a9; 
     TextField b1, b2, b3, b4, b5, b6, b7, b8, b9;
     TextField c1, c2, c3, c4, c5, c6, c7, c8, c9;
@@ -37,7 +43,17 @@ public class App extends Application{
     TextField h1, h2, h3, h4, h5, h6, h7, h8, h9;
     TextField i1, i2, i3, i4, i5, i6, i7, i8, i9;
 
-    int[][] GameBoard = new int[10][10]; //{ the starting value of each slot is 0, which wil need to be changed as the puzzle progresses
+    int[][] GameBoard = new int[][] {
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+        {99, 99, 99, 99, 99, 99, 99, 99, 99},
+    }; //{ the starting value of each slot is 0, which wil need to be changed as the puzzle progresses
 
 
 

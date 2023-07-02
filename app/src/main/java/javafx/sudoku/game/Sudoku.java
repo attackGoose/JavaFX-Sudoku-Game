@@ -48,12 +48,13 @@ public class Sudoku{
     }
 
     // chooses the cell with the least entropy/options after looking over every option in the row, column, and its 3x3 square, more than one cell is found
-    public void selectCell(int[][] gameBoard, int[] gameCell) { 
+    public void selectCell(int[][] gameBoard) { 
         int minLength = 0; //set this value to the length of the cell with the lowest entropy
         for (int rowIndex = 0; gameBoard.length > rowIndex + 1; rowIndex++) {
             for (int columnIndex = 0; gameBoard.length > columnIndex + 1; columnIndex++) {
-                if (gameCell.length < minLength) {
-                    minLength = gameCell.length;
+                int cellValues = gameBoard[rowIndex][columnIndex];
+                if (cellValues/11 < minLength) {
+                    minLength = cellValues;
                 }
             }
         }

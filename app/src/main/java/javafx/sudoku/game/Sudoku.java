@@ -3,7 +3,6 @@
 package javafx.sudoku.game;
 
 import java.util.Random; //this will be used later to pick a random number to collapse the cell with
-import java.util.stream.IntStream;
 
 public class Sudoku{
 

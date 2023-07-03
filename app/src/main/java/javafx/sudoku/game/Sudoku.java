@@ -3,6 +3,7 @@
 package javafx.sudoku.game;
 
 import java.util.Random; //this will be used later to pick a random number to collapse the cell with
+import java.util.stream.IntStream;
 
 public class Sudoku{
 
@@ -40,9 +41,33 @@ public class Sudoku{
 
 
     //displays the possible values for that cell
-    public void showPossibleValues(int[] gameCell) {
+    public int[] showPossibleValues(int[][] gameBoard, int[] ChosenGameCellPosition) { //chosen game cell = passed in via a user input by button
         int[] availableValues = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        
+        //searches the columns
+        for (int i = 0; i < gameBoard[1].length; i++) {
+            for (int item = 0; item < availableValues.length; item++) {
+                if (gameBoard[item][ChosenGameCellPosition[1]] == availableValues[item]) { //if a value is 0, it means it is no longer available
 
+                    availableValues[item] = 0;
+                    /*
+                    IntStream.range(0, availableValues.length)
+                    .filter(x -> x != item)
+                    .map(x -> availableValues[x])
+                    .toArray();*/
+                }
+            }
+        }
+
+        for (int i = 0; i < gameBoard[0].length; i++) {
+            for (int item = 0; item < availableValues.length; item++) {
+                if (gameBoard[ChosenGameCellPosition[0]][item] == availableValues[item]) {
+                    availableValues[item] = 0;
+                }
+            }
+        }
+
+        return availableValues;
         //loop over every value in its row, collumn, and 3x3 square and elimate those values from the list of available values
         
     }

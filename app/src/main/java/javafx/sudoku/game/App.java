@@ -10,11 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
+//import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class App extends Application{
 
     //initializations
-    TextField entry1; 
     Rectangle box_ur;
     Rectangle box_ul;
     Rectangle box_mm;
@@ -22,11 +22,42 @@ public class App extends Application{
     Rectangle box_ll;
     Button testButton;
     Node node;
-    TextField b11; //creates a text field to enter values in my reaction when i found it afte a week "YES FINALLY I CAN CONTINUE THIS PROJECT"
+    TextField b11; //creates a text field to enter values: my reaction when i found it afte a week "YES FINALLY I CAN CONTINUE THIS PROJECT"
     TextField b21;
     StackPane testPane;
 
-    int[][] GameBoard = new int[10][10]; //{ the starting value of each slot is 0, which wil need to be changed as the puzzle progresses
+    
+    /* HOW CELLS WORK (cells are the individual squares that make up the sudoku puzzle)
+    if a cell number is a multiple of 11, it means that the cell contains no current values, and the that is repeated would be the amount of possible values
+    so for example, 33 means that the current cell is unoccupied and it has 3 possible values, and 99 would mean that the cell is unoccupied and has 9 possible values
+
+    also, once you click a cell, it'll update a pannel to the side with the available numbers in a number pad format that you can click to select the value you want the cell 
+    to have
+    */
+    
+    //box slots/Cells/Grid: 
+    Button a1, a2, a3, a4, a5, a6, a7, a8, a9; 
+    Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
+    Button c1, c2, c3, c4, c5, c6, c7, c8, c9;
+    Button d1, d2, d3, d4, d5, d6, d7, d8, d9;
+    Button e1, e2, e3, e4, e5, e6, e7, e8, e9; //once you click a cell, it'll update a pannel to the side with the available numbers in a number pad format that you can click to select the value you want the cell to have
+    Button f1, f2, f3, f4, f5, f6, f7, f8, f9; 
+    Button g1, g2, g3, g4, g5, g6, g7, g8, g9; //these cells will also return their position in the matrix, like [0][1] or [9][5]
+    Button h1, h2, h3, h4, h5, h6, h7, h8, h9;
+    Button i1, i2, i3, i4, i5, i6, i7, i8, i9;
+
+    int[][] GameBoard = new int[][] {
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+        new int[]{99, 99, 99, 99, 99, 99, 99, 99, 99},
+    }; //{ the starting value of each slot is 0, which wil need to be changed as the puzzle progresses
+
 
 
     Sudoku gamepannel = new Sudoku(GameBoard);

@@ -9,8 +9,11 @@ public class Sudoku{
     //NOTE: the gameBoard parameter refers to the entire board, including dimensions in [rows][columns]
 
     boolean collapsed = false; //this assumes that no cells have a number in them yet
+    Sudoku gameBoard;
 
     public Sudoku(int[][] gameBoard) { //not sure what to put in here yet
+        
+        this.gameBoard = gameBoard;
 
     }
 

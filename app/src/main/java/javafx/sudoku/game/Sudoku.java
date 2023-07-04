@@ -8,11 +8,11 @@ public class Sudoku{
 
     //NOTE: the gameBoard parameter refers to the entire board, including dimensions in [rows][columns]
 
-    boolean collapsed = false; //this assumes that no cells have a number in them yet
-    Sudoku gameBoard;
+    //boolean collapsed = false; //this assumes that no cells have a number in them yet
+    int[][] gameBoard;
 
     public Sudoku(int[][] gameBoard) { //not sure what to put in here yet
-        
+
         this.gameBoard = gameBoard;
 
     }
@@ -27,15 +27,19 @@ public class Sudoku{
     }
 
     //automatically chooses the cell with the least entropy and collapses it (chooses an available number for the cell)
-    public int autoCollapseCell(int[] GameCell) {
+    public int autoCollapseCell(int[][] gameBoard, int GameCell) {
+
+        int[] possibleValues = showPossibleValues(gameBoard, GameCell);
 
         Random cellValue = new Random();
-        int chosenValue = cellValue.nextInt(10);
+        int chosenValue = cellValue.nextInt(10)-1;
 
-        return chosenValue; //the int[] should contain the number of available options for the cell
+        return possibleValues[chosenValue]; 
     }
 
-    public int collapseCell(int[] GameCell) { //this is for when the user manually solves the puzzle
+    public int collapseCell(int[][] gameBoard, int GameCell) { //this is for when the user manually solves the puzzle
+
+
         int chosenValue;
 
         return 0;
@@ -43,13 +47,13 @@ public class Sudoku{
 
 
     //displays the possible values for that cell
-    public int[] showPossibleValues(int[][] gameBoard, int[] ChosenGameCellPosition) { //chosen game cell = passed in via a user input by button
+    public int[] showPossibleValues(int[][] gameBoard, int ChosenGameCellPosition) { //chosen game cell = passed in via a user input by button, refer to app.java for the value of a game cell
         int[] availableValues = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
         
         //searches the columns
         for (int i = 0; i < gameBoard[1].length; i++) {
             for (int item = 0; item < availableValues.length; item++) {
-                if (gameBoard[item][ChosenGameCellPosition[1]] == availableValues[item]) { //if a value is 0, it means it is no longer available
+                if (gameBoard[item][ChosenGameCellPosition/11] == availableValues[item]) { //if a value is 0, it means it is no longer available
 
                     availableValues[item] = 0;
                     /*
@@ -63,7 +67,7 @@ public class Sudoku{
 
         for (int i = 0; i < gameBoard[0].length; i++) {
             for (int item = 0; item < availableValues.length; item++) {
-                if (gameBoard[ChosenGameCellPosition[0]][item] == availableValues[item]) {
+                if (gameBoard[ChosenGameCellPosition/11][item] == availableValues[item]) {
                     availableValues[item] = 0;
                 }
             }

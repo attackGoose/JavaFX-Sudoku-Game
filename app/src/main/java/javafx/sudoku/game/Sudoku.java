@@ -39,7 +39,6 @@ public class Sudoku{
 
     public int collapseCell(int[][] gameBoard, int GameCell) { //this is for when the user manually solves the puzzle
 
-
         int chosenValue;
 
         return 0;

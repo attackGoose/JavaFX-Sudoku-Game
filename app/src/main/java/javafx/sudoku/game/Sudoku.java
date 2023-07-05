@@ -62,7 +62,7 @@ public class Sudoku{
                 if (gameBoard[item][cellValues/11] == availableValues[item]) { //if a value is 0, it means it is no longer available
 
                     availableValues[item] = 0;
-                    /*
+                    /* copy and pasted in hopes of replacing the nested for loop **didn't work**
                     IntStream.range(0, availableValues.length)
                     .filter(x -> x != item)
                     .map(x -> availableValues[x])

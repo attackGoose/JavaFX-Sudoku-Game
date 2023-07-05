@@ -2,13 +2,12 @@
 
 package javafx.sudoku.game;
 
-import java.util.Random; //this will be used later to pick a random number to collapse the cell with
+import java.util.Random; 
 
 public class Sudoku{
 
     //NOTE: the gameBoard parameter refers to the entire board, including dimensions in [rows][columns]
 
-    //boolean collapsed = false; //this assumes that no cells have a number in them yet
     int[][] gameBoard;
 
     public Sudoku(int[][] gameBoard) { //not sure what to put in here yet
@@ -37,7 +36,8 @@ public class Sudoku{
         return possibleValues[chosenValue]; 
     }
 
-    public int collapseCell(int[][] gameBoard, int chosenValue) { //this is for when the user manually solves the puzzle
+    //this is for when the user manually solves the puzzle
+    public int collapseCell(int[][] gameBoard, int chosenValue) {
 
         //checks if the value is in there
         int[] availableValues = showPossibleValues(gameBoard, chosenValue);
@@ -99,5 +99,5 @@ public class Sudoku{
 
 }
 
-//also you can place pictures of empty slots or numbered slots in the resources file then reference those from there, so the user can just play with only their mouse
+//NOTE: also you can place pictures of empty slots or numbered slots in the resources file then reference those from there, so the user can just play with only their mouse
 //you can reference the pictures via .\resources\pngName.png i believe

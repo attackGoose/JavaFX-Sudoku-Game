@@ -37,22 +37,29 @@ public class Sudoku{
         return possibleValues[chosenValue]; 
     }
 
-    public int collapseCell(int[][] gameBoard, int GameCell) { //this is for when the user manually solves the puzzle
+    public int collapseCell(int[][] gameBoard, int chosenValue) { //this is for when the user manually solves the puzzle
 
-        int chosenValue;
+        //checks if the value is in there
+        int[] availableValues = showPossibleValues(gameBoard, chosenValue);
 
-        return 0;
+        for (int i = 0; availableValues.length < i; i++) {
+            if (chosenValue == availableValues[i]) {
+                return chosenValue;
+            }
+        }
+
+        return 0; //0 means the value isn't available
     }
 
 
     //displays the possible values for that cell
-    public int[] showPossibleValues(int[][] gameBoard, int ChosenGameCellPosition) { //chosen game cell = passed in via a user input by button, refer to app.java for the value of a game cell
-        int[] availableValues = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    public int[] showPossibleValues(int[][] gameBoard, int cellValues) { //chosen game cell = passed in via a user input by button, refer to app.java for the value of a game cell
+        int[] availableValues = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}; //the gameboard value that u pass in should include the cell that you want to show the values for
         
         //searches the columns
         for (int i = 0; i < gameBoard[1].length; i++) {
             for (int item = 0; item < availableValues.length; item++) {
-                if (gameBoard[item][ChosenGameCellPosition/11] == availableValues[item]) { //if a value is 0, it means it is no longer available
+                if (gameBoard[item][cellValues/11] == availableValues[item]) { //if a value is 0, it means it is no longer available
 
                     availableValues[item] = 0;
                     /*
@@ -66,7 +73,7 @@ public class Sudoku{
 
         for (int i = 0; i < gameBoard[0].length; i++) {
             for (int item = 0; item < availableValues.length; item++) {
-                if (gameBoard[ChosenGameCellPosition/11][item] == availableValues[item]) {
+                if (gameBoard[cellValues/11][item] == availableValues[item]) {
                     availableValues[item] = 0;
                 }
             }

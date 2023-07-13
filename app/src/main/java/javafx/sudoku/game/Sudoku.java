@@ -2,7 +2,7 @@
 
 package javafx.sudoku.game;
 
-import java.util.Random; 
+import java.util.Random;
 
 public class Sudoku{
 
@@ -17,7 +17,7 @@ public class Sudoku{
     }
 
     //when collapsing a cell/chooseing a number for it, you also have to remove that number from every other cell in its row, column, and 3x3 square, impliment the function below
-    public boolean refreshEntropy(int[][] gameBoard) {
+    public boolean refreshEntropy() {
         boolean finishedTask = false; //for this, you have to check the numberseach colmn, row, and designated 3x3 cube that its in, and elimiate those numbers from the possible values
         /*for () {
 
@@ -26,9 +26,9 @@ public class Sudoku{
     }
 
     //automatically chooses the cell with the least entropy and collapses it (chooses an available number for the cell)
-    public int autoCollapseCell(int[][] gameBoard, int GameCell) {
+    public int autoCollapseCell(int GameCell) {
 
-        int[] possibleValues = showPossibleValues(gameBoard, GameCell);
+        int[] possibleValues = showPossibleValues(this.gameBoard, GameCell);
 
         Random cellValue = new Random();
         int chosenValue = cellValue.nextInt(10)-1;
@@ -37,10 +37,10 @@ public class Sudoku{
     }
 
     //this is for when the user manually solves the puzzle
-    public int collapseCell(int[][] gameBoard, int chosenValue) {
+    public int collapseCell(int chosenValue) {
 
         //checks if the value is in there
-        int[] availableValues = showPossibleValues(gameBoard, chosenValue);
+        int[] availableValues = showPossibleValues(this.gameBoard, chosenValue);
 
         for (int i = 0; availableValues.length < i; i++) {
             if (chosenValue == availableValues[i]) {
@@ -85,11 +85,11 @@ public class Sudoku{
     }
 
     // chooses the cell with the least entropy/options after looking over every option in the row, column, and its 3x3 square, more than one cell is found
-    public void selectCell(int[][] gameBoard) { 
+    public void selectCell(int[][] gameBoardPosition) { 
         int minLength = 0; //set this value to the length of the cell with the lowest entropy
-        for (int rowIndex = 0; gameBoard.length > rowIndex + 1; rowIndex++) {
-            for (int columnIndex = 0; gameBoard.length > columnIndex + 1; columnIndex++) {
-                int cellValues = gameBoard[rowIndex][columnIndex];
+        for (int rowIndex = 0; gameBoardPosition.length > rowIndex + 1; rowIndex++) {
+            for (int columnIndex = 0; gameBoardPosition.length > columnIndex + 1; columnIndex++) {
+                int cellValues = gameBoardPosition[rowIndex][columnIndex];
                 if (cellValues/11 < minLength) {
                     minLength = cellValues;
                 }
